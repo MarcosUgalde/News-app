@@ -18,6 +18,7 @@ CREATE TABLE IF NOT EXISTS searchs (
 CREATE TABLE IF NOT EXISTS newspapers (
     id uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
     newspapers_name TEXT NOT NULL,
+    web_url TEXT NOT NULL UNIQUE
 )
 
 CREATE TABLE IF NOT EXISTS news (
