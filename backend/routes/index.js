@@ -1,5 +1,5 @@
 const router = require("express").Router();
 
-module.exports = (db) => {
+module.exports = () => {
   return router;
 };
