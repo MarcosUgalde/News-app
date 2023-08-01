@@ -1,4 +1,4 @@
-const errrors = require("../misc/errors");
+const errors = require("../misc/errors");
 const WHITELIST = ["localhost", "127.0.0.1"];
 
 module.exports = {
