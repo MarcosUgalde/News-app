@@ -8,6 +8,13 @@ const insertUser = (email, username, password) => sql.unsafe`
     )
 `;
 
+const selectByEmail = (email) => sql.unsafe`
+        SELECT email, username, password, id
+        FROM users
+        WHERE email LIKE ${email}
+`;
+
 module.exports = {
   insertUser,
+  selectByEmail,
 };
