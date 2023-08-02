@@ -1,6 +1,6 @@
 const { selectFrontPage } = require("./queries");
 
-const getFrontPage = (db = async (url) => {
+const getFrontPage = (db) => async (url) => {
   try {
     const response = await db.query(selectFrontPage(url));
 
@@ -15,7 +15,7 @@ const getFrontPage = (db = async (url) => {
       message: error.message,
     };
   }
-});
+};
 
 module.exports = {
   getFrontPage,
