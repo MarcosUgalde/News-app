@@ -1,3 +1,10 @@
+DROP TABLE IF EXISTS replies;
+DROP TABLE IF EXISTS news;
+DROP TABLE IF EXISTS comments;
+DROP TABLE IF EXISTS searchs;
+DROP TABLE IF EXISTS newspapers;
+DROP TABLE IF EXISTS users;
+
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
 CREATE TABLE IF NOT EXISTS users (
@@ -19,7 +26,7 @@ CREATE TABLE IF NOT EXISTS newspapers (
     id uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
     newspapers_name TEXT NOT NULL,
     web_url TEXT NOT NULL UNIQUE
-)
+);
 
 CREATE TABLE IF NOT EXISTS news (
     id uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
@@ -31,7 +38,7 @@ CREATE TABLE IF NOT EXISTS news (
     search_id uuid NOT NULL REFERENCES searchs
         ON UPDATE CASCADE
         ON DELETE CASCADE
-)
+);
 
 CREATE TABLE IF NOT EXISTS comments (
     id uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
@@ -42,7 +49,7 @@ CREATE TABLE IF NOT EXISTS comments (
     user_id uuid NOT NULL REFERENCES users
         ON UPDATE CASCADE 
         ON DELETE CASCADE
-)
+);
 
 CREATE TABLE IF NOT EXISTS replies (
     id uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
@@ -53,4 +60,4 @@ CREATE TABLE IF NOT EXISTS replies (
     commented_by uuid NOT NULL REFERENCES users
         ON UPDATE CASCADE 
         ON DELETE CASCADE
-)
+);
