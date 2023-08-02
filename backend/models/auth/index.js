@@ -1,6 +1,6 @@
-const { insertUser } = require("./queries");
+const { insertUser, selectByEmail } = require("./queries");
 
-const createUser = (db = async (email, username, password) => {
+const createUser = (db) => async (email, username, password) => {
   try {
     await db.query(insertUser(email, username, password));
     return {
@@ -13,9 +13,9 @@ const createUser = (db = async (email, username, password) => {
       message: error.message,
     };
   }
-});
+};
 
-const selectUser = (db = async (email, compareFn) => {
+const selectUser = (db) => async (email, compareFn) => {
   try {
     const user = await db.maybeOne(selectByEmail(email));
 
@@ -48,7 +48,7 @@ const selectUser = (db = async (email, compareFn) => {
       message: error.message,
     };
   }
-});
+};
 
 module.exports = {
   createUser,

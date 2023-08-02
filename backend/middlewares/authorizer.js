@@ -1,5 +1,5 @@
 const { deserialize } = require("simple-stateless-auth-library");
-const errors = require("..misc/errors");
+const errors = require("../misc/errors");
 
 module.exports =
   (strict = true) =>
@@ -9,7 +9,8 @@ module.exports =
     console.log(payload);
     if (strict && !payload) return next(errors[401]);
 
-    res.locals = payload;
+    res.locals.user = payload || {};
+    console.log(res.locals);
 
     next();
   };
