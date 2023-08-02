@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS news (
     link TEXT NOT NULL UNIQUE,
     newspaper_id uuid NOT NULL REFERENCES newspapers
         ON UPDATE CASCADE
-        ON DELETE CASCADE
+        ON DELETE CASCADE,
     search_id uuid NOT NULL REFERENCES searchs
         ON UPDATE CASCADE
         ON DELETE CASCADE
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS comments (
     comment_text TEXT NOT NULL,
     search_id uuid NOT NULL REFERENCES searchs
         ON UPDATE CASCADE
-        ON DELETE CASCADE
+        ON DELETE CASCADE,
     user_id uuid NOT NULL REFERENCES users
         ON UPDATE CASCADE 
         ON DELETE CASCADE
@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS replies (
     reply_text TEXT NOT NULL,
     comment_id uuid NOT NULL REFERENCES comments
         ON UPDATE CASCADE 
-        ON DELETE CASCADE
+        ON DELETE CASCADE,
     commented_by uuid NOT NULL REFERENCES users
         ON UPDATE CASCADE 
         ON DELETE CASCADE
