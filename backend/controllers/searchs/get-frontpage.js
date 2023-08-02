@@ -3,8 +3,7 @@ const errors = require("../../misc/errors");
 
 module.exports = (db) => async (req, res, next) => {
   const { url } = req.params;
-  console.log(url);
-  const website = await getFrontPage(await db)(url);
+  const website = await getFrontPage(await db)(`https://${url}/`);
 
   if (!website) return next(errors[500]);
 
