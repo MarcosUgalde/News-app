@@ -1,5 +1,9 @@
 const router = require("express").Router();
 
-module.exports = () => {
+const authRoutes = require("./auth");
+
+module.exports = (db) => {
+  router.use("/auth", authRoutes(db));
+
   return router;
 };
