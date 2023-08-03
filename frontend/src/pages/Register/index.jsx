@@ -36,6 +36,7 @@ function Register() {
                 <label>password</label>
                 <input type="password" id='password' placeholder='length must be at least 4' {...register("password", {required: true, minLength: 4})} />
                 <p>{formState.errors && errors[formState.errors?.password?.type]}</p>
+                <>Submit</>
             </form>
         </>
     )
