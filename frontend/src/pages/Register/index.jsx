@@ -38,6 +38,7 @@ function Register() {
                 <p>{formState.errors && errors[formState.errors?.password?.type]}</p>
                 <>Submit</>
             </form>
+            <>Already have an account? <a href="/login">Login here!</a></>
         </>
     )
 }
