@@ -1,5 +1,6 @@
 import { useQuery } from "react-query"
 import { searchs } from "../../services"
+import { useUrl } from "../../hooks/useUrl"
 
 function NewsPaper() {
     //falta coger la url. Crear un hook para ello
