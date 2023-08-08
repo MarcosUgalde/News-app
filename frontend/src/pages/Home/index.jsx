@@ -7,6 +7,7 @@ function Home () {
         <>
             <h1>This is home page</h1>
             <div>
+                <h2>Nacional</h2>
                 <NewsPaper url='elpais.com/'/>
                 <NewsPaper url='www.elmundo.es/'/>
                 <NewsPaper url='www.abc.es/'/>
@@ -20,11 +21,13 @@ function Home () {
                 <NewsPaper url='www.libertaddigital.com/'/>
             </div>
             <div>
+                <h2>Internacional</h2>
                 <NewsPaper url='www.economist.com/'/>
                 <NewsPaper url='www.nytimes.com/'/>
                 <NewsPaper url='www.washingtonpost.com/'/>
                 <NewsPaper url='www.bbc.com'/>
             </div>
+            <div></div>
         </>
     )
 }
