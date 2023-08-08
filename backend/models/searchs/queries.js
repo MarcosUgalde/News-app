@@ -6,6 +6,15 @@ const selectFrontPage = (url) => sql.unsafe`
     WHERE web_url LIKE ${url}
 `;
 
+const insertComment = (text) => sql.unsafe`
+  INSERT INTO comments (
+    comment_text
+  ) VALUES (
+    ${text}
+  )
+`;
+
 module.exports = {
   selectFrontPage,
+  insertComment,
 };
