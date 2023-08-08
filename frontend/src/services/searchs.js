@@ -7,7 +7,6 @@ export const newspaperInfo = (client) => async (params) => {
     return response;
   } catch (error) {
     console.info("Newspaper error info: ", error.message);
-    console.log(params.url);
     return { success: false };
   }
 };
