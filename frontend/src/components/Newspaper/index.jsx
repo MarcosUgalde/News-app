@@ -15,7 +15,6 @@ function NewsPaper(url) {
         <>
             <h3>{data.data[0]?.newspapers_name}</h3>
             <div>
-                View of frontpage
                 <Frontpageview url={data?.data[0]?.web_url}/>
             </div>
             <p>Visit web site here: <a href={completeWebSite}>{website}</a></p>
