@@ -1,3 +1,4 @@
+import Styled from './styles'
 import { useForm } from 'react-hook-form'
 import { login } from '../../misc/templates'
 import { useMutation, useQueryClient } from 'react-query'
@@ -14,6 +15,7 @@ function Login() {
   const { mutate } = useMutation({
     mutationFn: auth.signin,
     onSuccess: (response) => {
+      console.log('Response: ', response)
       if(response.success) queryClient.invalidateQueries({ queryKey: ['user']}) && setLocation('/')
     }
   })
@@ -39,7 +41,7 @@ function Login() {
         <label>password</label>
         <input type="password" id='password' placeholder='*******' {...register("password", {required: true, minLength: 4})} />
         <p>{formState.errors && errors[formState.errors?.password?.type]}</p>
-        <>Submit</>
+        <Styled.SubmitButton type='submit'>Submit</Styled.SubmitButton>
       </form>
       <>
         Do not have an account yet? <a href='/signup'>Sign up here!</a>

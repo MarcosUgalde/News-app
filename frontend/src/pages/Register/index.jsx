@@ -1,3 +1,4 @@
+import Styled from './styles'
 import { useForm } from 'react-hook-form'
 import { login } from '../../misc/templates'
 import { useMutation } from 'react-query'
@@ -36,7 +37,7 @@ function Register() {
                 <label>password</label>
                 <input type="password" id='password' placeholder='length must be at least 4' {...register("password", {required: true, minLength: 4})} />
                 <p>{formState.errors && errors[formState.errors?.password?.type]}</p>
-                <>Submit</>
+                <Styled.SubmitButton type='submit'>Submit</Styled.SubmitButton>
             </form>
             <>Already have an account? <a href="/login">Login here!</a></>
         </>

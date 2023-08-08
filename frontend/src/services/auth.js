@@ -21,7 +21,7 @@ export const signin = (client) => async (params) => {
 
 export const logout = (client) => async () => {
   try {
-    const { data } = await client.post("/auth/signoput");
+    const { data } = await client.post("/auth/signout");
     return data;
   } catch (error) {
     console.info("signout error: ", error.message);
