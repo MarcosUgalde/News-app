@@ -1,19 +1,23 @@
 import { useQuery } from "react-query"
 import { searchs } from "../../services"
-//import { useFetch } from "../../hooks"
+import Frontpageview from "../Frontpageview"
 
 function NewsPaper(url) {
     const { data, isLoading } = useQuery(['newspaper', url], () => searchs.getNewspaper(url))
     console.log('Data', data)
+    console.log('url.url: ', url.url)
     const website = url.url
     console.log('Website: ', website)
     const completeWebSite = 'https://' + website;
 
-    //const text = useFetch(website)
     if(isLoading) return <div>Loading...</div>
     return(
         <>
             <h3>{data.data[0]?.newspapers_name}</h3>
+            <div>
+                View of frontpage
+                <Frontpageview url={data?.data[0]?.web_url}/>
+            </div>
             <p>Visit web site here: <a href={completeWebSite}>{website}</a></p>
         </>
     )
