@@ -6,11 +6,11 @@ const selectFrontPage = (url) => sql.unsafe`
     WHERE web_url LIKE ${url}
 `;
 
-const insertComment = (text) => sql.unsafe`
+const insertComment = (text, user_id) => sql.unsafe`
   INSERT INTO comments (
-    comment_text
+    comment_text, user_id
   ) VALUES (
-    ${text}
+    ${text}, ${user_id}
   )
 `;
 
