@@ -1,10 +1,12 @@
 import { styled } from "styled-components";
 
 const Body = styled.section`
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Space Mono', monospace;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: black;
+    color: silver;
 `
 
 const Blocks = styled.section`
@@ -15,4 +17,5 @@ const Blocks = styled.section`
 
 export default {
     Body,
+    Blocks,
 }
