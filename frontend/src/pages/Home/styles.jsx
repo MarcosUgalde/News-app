@@ -7,6 +7,11 @@ const Body = styled.section`
     align-items: center;
     background-color: black;
     color: silver;
+
+    h2 {
+        font-size: 1.5em;
+        color: #b1a625;
+    }
 `
 
 const Blocks = styled.section`
