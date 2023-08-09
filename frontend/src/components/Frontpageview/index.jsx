@@ -4,7 +4,7 @@ function Frontpageview({ url }) {
     return (
         <>
             <div>
-                <iframe src={url} title='External site'></iframe>                
+                <iframe src={url} title='External site' width='500px' height='300px'></iframe>                
             </div>
         </>
     )

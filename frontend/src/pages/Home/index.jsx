@@ -1,8 +1,9 @@
 import NewsPaper from "../../components/Newspaper"
+import Styled from './styles'
 
 function Home () {
     return (
-        <>
+        <Styled.Body>
             <h1>This is home page</h1>
             <div>
                 <h2>Nacional</h2>
@@ -23,7 +24,7 @@ function Home () {
                 <NewsPaper url='www.nytimes.com/'/>
             </div>
             <div></div>
-        </>
+        </Styled.Body>
     )
 }
 
