@@ -1,3 +1,4 @@
+import Styled from './styles'
 import { useQuery } from "react-query"
 import { searchs } from "../../services"
 import Frontpageview from "../Frontpageview"
@@ -12,13 +13,13 @@ function NewsPaper(url) {
 
     if(isLoading) return <div>Loading...</div>
     return(
-        <>
+        <Styled.Section>
             <h3>{data.data[0]?.newspapers_name}</h3>
             <div>
                 <Frontpageview url={data?.data[0]?.web_url}/>
             </div>
             <p>Visit web site here: <a href={completeWebSite}>{website}</a></p>
-        </>
+        </Styled.Section>
     )
 }
 
