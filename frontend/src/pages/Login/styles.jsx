@@ -4,6 +4,21 @@ const Body = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: #707070;
+    color: gold;
+    height: 100vh;
+`
+
+const Form = styled.section`
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+`
+const Item = styled.section`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `
 
 const SubmitButton = styled.button`
@@ -14,5 +29,7 @@ const SubmitButton = styled.button`
 `
 export default {
     Body,
+    Form,
+    Item,
     SubmitButton,
 }

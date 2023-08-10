@@ -34,15 +34,23 @@ function Login() {
   return (
     <Styled.Body>
       <h1>Login</h1>
-      <form onSubmit={handleSubmit(handleForm)}>
-        <label htmlFor="email">Inser email</label>
-        <input type="text" id='email' placeholder='example@gmail.com' {...register("email", {required: true})} />
-        <p>{formState.errors && errors[formState.errors?.email?.type]}</p>
-        <label>password</label>
-        <input type="password" id='password' placeholder='*******' {...register("password", {required: true, minLength: 4})} />
-        <p>{formState.errors && errors[formState.errors?.password?.type]}</p>
-        <Styled.SubmitButton type='submit'>Submit</Styled.SubmitButton>
-      </form>
+      <Styled.Form>
+        <form onSubmit={handleSubmit(handleForm)}>
+          <Styled.Item>
+            <label htmlFor="email">Inser email</label>
+            <input type="text" id='email' placeholder='example@gmail.com' {...register("email", {required: true})} />
+            <p>{formState.errors && errors[formState.errors?.email?.type]}</p>
+          </Styled.Item>
+          <Styled.Item>
+            <label>password</label>
+            <input type="password" id='password' placeholder='*******' {...register("password", {required: true, minLength: 4})} />
+            <p>{formState.errors && errors[formState.errors?.password?.type]}</p>
+          </Styled.Item>
+          <Styled.Item>
+            <Styled.SubmitButton type='submit'>Submit</Styled.SubmitButton>
+          </Styled.Item>
+        </form>
+      </Styled.Form>
       <div>
         Do not have an account yet? <a href='/signup'>Sign up here!</a>
       </div>
