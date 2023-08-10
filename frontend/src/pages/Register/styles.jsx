@@ -27,9 +27,14 @@ const SubmitButton = styled.button`
     padding: 10px 20px;
     cursor: pointer;
 `
+
+const Link = styled.section`
+    margin-top: 2em;
+`
 export default {
     Body,
     Form,
     Item,
     SubmitButton,
+    Link,
 }

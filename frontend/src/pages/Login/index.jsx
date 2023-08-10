@@ -51,9 +51,9 @@ function Login() {
           </Styled.Item>
         </form>
       </Styled.Form>
-      <div>
+      <Styled.Link>
         Do not have an account yet? <a href='/signup'>Sign up here!</a>
-      </div>
+      </Styled.Link>
     </Styled.Body>
   )
 }

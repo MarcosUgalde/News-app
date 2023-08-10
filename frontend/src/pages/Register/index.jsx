@@ -49,9 +49,9 @@ function Register() {
                     </Styled.Item>
                 </form>
             </Styled.Form>
-            <div>
+            <Styled.Link>
                 Already have an account? <a href="/login">Login here!</a>
-            </div>
+            </Styled.Link>
         </Styled.Body>
     )
 }
