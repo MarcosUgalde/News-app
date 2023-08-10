@@ -32,7 +32,7 @@ function Login() {
   const { errors } = login
 
   return (
-    <>
+    <Styled.Body>
       <h1>Login</h1>
       <form onSubmit={handleSubmit(handleForm)}>
         <label htmlFor="email">Inser email</label>
@@ -43,10 +43,10 @@ function Login() {
         <p>{formState.errors && errors[formState.errors?.password?.type]}</p>
         <Styled.SubmitButton type='submit'>Submit</Styled.SubmitButton>
       </form>
-      <>
+      <div>
         Do not have an account yet? <a href='/signup'>Sign up here!</a>
-      </>
-    </>
+      </div>
+    </Styled.Body>
   )
 }
 
