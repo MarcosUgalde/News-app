@@ -25,22 +25,34 @@ function Register() {
     const { errors } = login
     
     return (
-        <>
+        <Styled.Body>
             <h1>Create account</h1>
-            <form onSubmit={handleSubmit(handleForm)}>
-                <label htmlFor='email'>Insert email</label>
-                <input type='text' id='email' placeholder='example@example.com' {...register('email', {required: true})}/>
-                <p>{formState.errors && errors[formState.errors?.email?.type]}</p>
-                <label>username</label>
-                <input type="text" id='username' placeholder='username' {...register("username", { required: true})} />
-                <p>{formState.errors && errors[formState.errors?.username?.type]}</p>
-                <label>password</label>
-                <input type="password" id='password' placeholder='length must be at least 4' {...register("password", {required: true, minLength: 4})} />
-                <p>{formState.errors && errors[formState.errors?.password?.type]}</p>
-                <Styled.SubmitButton type='submit'>Submit</Styled.SubmitButton>
-            </form>
-            <>Already have an account? <a href="/login">Login here!</a></>
-        </>
+            <Styled.Form>
+                <form onSubmit={handleSubmit(handleForm)}>
+                    <Styled.Item>
+                        <label htmlFor='email'>Insert email</label>
+                        <input type='text' id='email' placeholder='example@example.com' {...register('email', {required: true})}/>
+                        <p>{formState.errors && errors[formState.errors?.email?.type]}</p>
+                    </Styled.Item>
+                    <Styled.Item>
+                        <label>username</label>
+                        <input type="text" id='username' placeholder='username' {...register("username", { required: true})} />
+                        <p>{formState.errors && errors[formState.errors?.username?.type]}</p>
+                    </Styled.Item>
+                    <Styled.Item>
+                        <label>password</label>
+                        <input type="password" id='password' placeholder='length must be at least 4' {...register("password", {required: true, minLength: 4})} />
+                        <p>{formState.errors && errors[formState.errors?.password?.type]}</p>
+                    </Styled.Item>
+                    <Styled.Item>
+                        <Styled.SubmitButton type='submit'>Submit</Styled.SubmitButton>
+                    </Styled.Item>
+                </form>
+            </Styled.Form>
+            <div>
+                Already have an account? <a href="/login">Login here!</a>
+            </div>
+        </Styled.Body>
     )
 }
 
