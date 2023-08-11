@@ -13,5 +13,5 @@ export function SearchProvider({ children }) {
 }
 
 export function useSearch() {
-    return useContext(SearchContext)
+    return useContext(SearchContext);
 }
