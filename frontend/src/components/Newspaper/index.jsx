@@ -14,7 +14,7 @@ function NewsPaper(url) {
     if(isLoading) return <div>Loading...</div>
     return(
         <Styled.Section>
-            <h3>{data.data[0]?.newspapers_name}</h3>
+            <h3>{data?.data[0]?.newspapers_name}</h3>
             <div>
                 <Frontpageview url={data?.data[0]?.web_url}/>
             </div>
