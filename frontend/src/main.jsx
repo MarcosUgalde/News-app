@@ -7,6 +7,7 @@ import Home from './pages/Home/index.jsx'
 import Guard from './components/Guard/index.jsx'
 import {Switch, Route, Redirect} from 'wouter'
 import NavBar from './components/NavBar/index.jsx'
+import { SearchProvider } from './components/SearchContext/index.jsx'
 
 const Main = () => {
   return (
@@ -16,9 +17,11 @@ const Main = () => {
       <Switch>
         <Route path='/signup' component={Register}/>
         <Route path='/login' component={Login}/>
-        <Route path='/'>
-          < Guard component={Home}/>
-        </Route>
+        <SearchProvider>
+          <Route path='/'>
+            <Guard component={Home}/>
+          </Route>
+        </SearchProvider>
         <Redirect to='/login' />
       </Switch>
     </Provider>
