@@ -1,7 +1,7 @@
 import axios from "axios";
 import { register, signin, logout } from "./auth";
 import { info } from "./user";
-import { newspaperInfo, websiteAPI } from "./searchs";
+import { addSearch, newspaperInfo, websiteAPI } from "./searchs";
 
 const client = axios.create({
   baseURL: import.meta.env.VITE_API_URL,
@@ -21,6 +21,7 @@ const user = {
 const searchs = {
   getNewspaper: newspaperInfo(client),
   getWeb: websiteAPI(),
+  addSearch: addSearch(client),
 };
 
 export { auth, user, searchs };

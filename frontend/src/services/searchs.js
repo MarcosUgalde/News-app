@@ -19,3 +19,17 @@ export const websiteAPI = () => async (url) => {
     .then((response) => console.log(response))
     .catch((error) => console.log(error));
 };
+
+export const addSearch = (client) => async (params) => {
+  try {
+    const { data } = await client.post(
+      "http://localhost:3000/searchs/newsearch",
+      params
+    );
+    console.info("service data: ", data);
+    return data;
+  } catch (error) {
+    console.info("Search addition error info: ", error.message);
+    return { success: false };
+  }
+};
