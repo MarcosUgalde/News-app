@@ -1,12 +1,19 @@
 import Styled from './styles'
 import  { useUser } from '../../hooks/useUser'
+import { useState } from 'react'
+import Modal from '../Modal'
 
 const NavBar = () => {
-    const { data } = useUser()
-    
+    const { data } = useUser();
+    const [showModal, setShowModal] = useState(false)
+
+    if(showModal) return <Modal />
+
     return (
         <Styled.Nav>
-            {data.username}
+            <Styled.User onClick={() => setShowModal(true)}>
+                {data?.username}
+            </Styled.User>
         </Styled.Nav>    
     )
 }
