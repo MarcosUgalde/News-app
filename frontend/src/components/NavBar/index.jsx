@@ -3,10 +3,10 @@ import  { useUser } from '../../hooks/useUser'
 
 const NavBar = () => {
     const { data } = useUser()
-    console.log(data)
+    
     return (
         <Styled.Nav>
-            Hola
+            {data.username}
         </Styled.Nav>    
     )
 }
