@@ -1,4 +1,4 @@
-const { selectFrontPage, insertComment } = require("./queries");
+const { selectFrontPage, insertComment, insertSearch } = require("./queries");
 
 const getFrontPage = (db) => async (url) => {
   try {
@@ -10,6 +10,23 @@ const getFrontPage = (db) => async (url) => {
     };
   } catch (error) {
     console.info("Get front page error: ", error.message);
+    return {
+      ok: false,
+      message: error.message,
+    };
+  }
+};
+
+const addSearch = (db) => async (text, user_id) => {
+  try {
+    const response = await db.query(insertSearch(text, user_id));
+
+    return {
+      ok: true,
+      data: response.rows,
+    };
+  } catch (error) {
+    console.info("Create search error info: ", error.message);
     return {
       ok: false,
       message: error.message,
@@ -36,5 +53,6 @@ const addComment = (db) => async (text, user_id) => {
 
 module.exports = {
   getFrontPage,
+  addSearch,
   addComment,
 };
