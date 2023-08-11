@@ -11,7 +11,7 @@ export const UseLogout = () => {
     onSuccess: (result) => {
       if (result.success) {
         queryClient.invalidateQueries({ queryKey: ["user"] }) &&
-          setLocation("/lgin");
+          setLocation("/login");
       }
     },
   });
