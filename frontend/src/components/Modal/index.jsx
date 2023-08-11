@@ -6,8 +6,8 @@ const Modal = ({ handleModal }) => {
 
     return (
         <Styled.Body>
-            <p>You are about to logout</p>
-            <p>Are you sure?</p>
+            <Styled.Text>You are about to logout</Styled.Text>
+            <Styled.Text>Are you sure?</Styled.Text>
             <Styled.Yes onClick={handleLogout}>Yes</Styled.Yes>
             <Styled.No onClick={() => handleModal(false)}>No</Styled.No>
         </Styled.Body>
