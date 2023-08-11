@@ -6,10 +6,13 @@ import Login from './pages/Login'
 import Home from './pages/Home/index.jsx'
 import Guard from './components/Guard/index.jsx'
 import {Switch, Route, Redirect} from 'wouter'
+import NavBar from './components/NavBar/index.jsx'
 
 const Main = () => {
   return (
     <Provider>
+      <NavBar />
+      
       <Switch>
         <Route path='/signup' component={Register}/>
         <Route path='/login' component={Login}/>
