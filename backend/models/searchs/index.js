@@ -20,6 +20,7 @@ const getFrontPage = (db) => async (url) => {
 const addSearch = (db) => async (text, user_id) => {
   try {
     const response = await db.query(insertSearch(text, user_id));
+    console.log("Response: ", response);
 
     return {
       ok: true,
