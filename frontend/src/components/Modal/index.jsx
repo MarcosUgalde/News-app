@@ -1,7 +1,10 @@
 const Modal = () => {
     return (
         <>
-            Modal
+            <p>You are about to logout</p>
+            <p>Are you sure?</p>
+            <button>Yes</button>
+            <button>No</button>
         </>
     )
 }
