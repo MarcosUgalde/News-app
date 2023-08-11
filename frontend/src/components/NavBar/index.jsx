@@ -7,7 +7,7 @@ const NavBar = () => {
     const { data } = useUser();
     const [showModal, setShowModal] = useState(false)
 
-    if(showModal) return <Modal />
+    if(showModal) return <Modal handleModal={setShowModal}/>
 
     return (
         <Styled.Nav>
