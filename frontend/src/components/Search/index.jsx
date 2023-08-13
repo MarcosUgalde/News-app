@@ -1,6 +1,10 @@
 import { useSearch } from "../SearchContext"
+import { addSearch } from "../../services/searchs";
 
 function SearchComponent() {
+    const { data } = addSearch();
+    console.log('addSearch service data: ', data)
+
     const { searchTerm, setSearchTerm} = useSearch();
 
     const handleSearch = (e) => {
