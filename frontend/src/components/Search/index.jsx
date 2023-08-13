@@ -1,9 +1,9 @@
 import { useSearch } from "../SearchContext"
-import { addSearch } from "../../services/searchs";
+import { searchs } from "../../services";
+import { useMutation } from "react-query";
 
 function SearchComponent() {
-    const { data } = addSearch();
-    console.log('addSearch service data: ', data)
+    
 
     const { searchTerm, setSearchTerm} = useSearch();
 
