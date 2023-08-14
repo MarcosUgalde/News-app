@@ -4,22 +4,29 @@ import { useMutation } from "react-query";
 import { useState } from "react";
 
 function SearchComponent() {
-    const [payload, setPayload] = useState()
-    const { mutate } = useMutation(() => searchs.addSearch({ payload }, {onSuccess: (data) => {
-        console.log(data)
-    }}))
-
     const { searchTerm, setSearchTerm} = useSearch();
-
+    
+    const [payload, setPayload] = useState({ searchTerm: ''});
+    
     const handleSearch = (e) => {
+        const newSearchTerm = e.target.value;
+        setSearchTerm(newSearchTerm)
         setPayload({
             ...payload,
+            searchTerm: newSearchTerm,
         })
-        setSearchTerm(e.target.value)
+    }
+
+    const { mutate } = useMutation(() => searchs.addSearch(payload))
+
+    const handleSubmit= (e) => {
+        e.preventDefault();
+        mutate();
     }
 
     return (
         <input type="text" value={searchTerm} onChange={handleSearch} placeholder="Search..." />
+        <button type="submit">Search</button>
     )
 }
 
