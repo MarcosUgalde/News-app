@@ -12,6 +12,9 @@ function SearchComponent() {
     const { searchTerm, setSearchTerm} = useSearch();
 
     const handleSearch = (e) => {
+        setPayload({
+            ...payload,
+        })
         setSearchTerm(e.target.value)
     }
 
