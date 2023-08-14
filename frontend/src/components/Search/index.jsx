@@ -25,8 +25,10 @@ function SearchComponent() {
     }
 
     return (
-        <input type="text" value={searchTerm} onChange={handleSearch} placeholder="Search..." />
-        <button type="submit">Search</button>
+        <form on onSubmit={handleSubmit}>
+            <input type="text" value={searchTerm} onChange={handleSearch} placeholder="Search..." />
+            <button type="submit">Search</button>
+        </form>
     )
 }
 
