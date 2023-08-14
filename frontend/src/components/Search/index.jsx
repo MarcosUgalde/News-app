@@ -4,16 +4,16 @@ import { useMutation } from "react-query";
 import { useState } from "react";
 
 function SearchComponent() {
-    const { searchTerm, setSearchTerm} = useSearch();
+    const { text, setText} = useSearch();
     
-    const [payload, setPayload] = useState({ searchTerm: ''});
+    const [payload, setPayload] = useState({ text: ''});
     
     const handleSearch = (e) => {
         const newSearchTerm = e.target.value;
-        setSearchTerm(newSearchTerm)
+        setText(newSearchTerm)
         setPayload({
             ...payload,
-            searchTerm: newSearchTerm,
+            text: newSearchTerm,
         })
     }
 
@@ -25,8 +25,8 @@ function SearchComponent() {
     }
 
     return (
-        <form on onSubmit={handleSubmit}>
-            <input type="text" value={searchTerm} onChange={handleSearch} placeholder="Search..." />
+        <form onSubmit={handleSubmit}>
+            <input type="text" value={text} onChange={handleSearch} placeholder="Search..." />
             <button type="submit">Search</button>
         </form>
     )

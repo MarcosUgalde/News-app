@@ -30,6 +30,7 @@ export const addSearch = (client) => async (params) => {
     return data;
   } catch (error) {
     console.info("Search addition error info: ", error.message);
+    console.log("search service params: ", params);
     return { success: false };
   }
 };
